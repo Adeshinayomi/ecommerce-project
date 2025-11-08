@@ -16,7 +16,8 @@ function App() {
     const response =await axios.get('/api/cart-items?expand=product')
     setCart(response.data)
   }
-    
+  
+  window.axios=axios
 
   useEffect(()=>{
     loadCart()
