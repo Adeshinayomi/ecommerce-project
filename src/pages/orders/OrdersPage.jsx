@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 import { Header } from "../../components/Header";
 import { OrdersGrid } from "./OrdersGrid";
 import "./OrdersPage.css";
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart,loadCart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function OrdersPage({ cart }) {
         <div className="orders-grid">
           {orders.map((order) => {
             return (
-              <OrdersGrid key={order.id} order={order}/>
+              <OrdersGrid key={order.id} order={order} loadCart={loadCart}/>
             );
           })}
         </div>
