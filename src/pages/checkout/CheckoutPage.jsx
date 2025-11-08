@@ -6,7 +6,7 @@ import { OrderSummary } from "./OrderSummary";
 import "./CheckoutPage.css";
 
 
-export function CheckoutPage({ cart }) {
+export function CheckoutPage({ cart,loadCart }) {
   const [deliveryOption, setDeliveryOption] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
@@ -36,7 +36,7 @@ export function CheckoutPage({ cart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-         <OrderSummary cart={cart} deliveryOption={deliveryOption}/>
+         <OrderSummary cart={cart} deliveryOption={deliveryOption} loadCart={loadCart}/>
 
           <PaymentSummary paymentSummary={paymentSummary}/>
         </div>
