@@ -13,11 +13,13 @@ export function HomePage({cart,loadCart}) {
   
   useEffect(()=>{
     const getHomeData= async()=> {
+      // const response = await axios.get('/api/products')
+      // setProducts(response.data)
       let response=''
       if(search){
-        response=await axios(`/api/products?search=${search}`)
+        response=await axios.get(`/api/products?search=${search}`)
       }else{
-        response= await axios('/api/products')
+        response= await axios.get('/api/products')
       }
       setProducts(response.data)
     }
